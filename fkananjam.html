@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head><script type="">
+	function startTime(){
+		var today=new Date();
+		var h,m,s;
+		h=today.getHours();
+		m=today.getMinutes();
+		s=today.getSeconds();
+		m=check(m);
+		s=check(s);
+		document.getElementById("Clock").innerHTML=h+":"+m+":"+s;
+		var t=setTimeout(function(){startTime()},500);
+	}
+	function check(a)
+	{
+		if (a<10) 
+			a="0"+a;
+		return a;
+	}
+</script>
+<body bgcolor="lightblue" onload="startTime();">
+	<center>
+		<h3 style="font-size: 12px">JAM <div id="Clock"></div></h3>
+	</center>
+</body>
+</html>
